@@ -1,0 +1,160 @@
+package com.example.biografi
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import bioDataArray
+import infoArray
+import itemList
+
+@Composable
+fun DetailScreen() {
+    LazyColumn(modifier = Modifier
+        .padding(20.dp)
+        .padding(top = 20.dp)) {
+
+        item{
+            Text(
+                text = "Detail Mahasiswa",
+                fontWeight = FontWeight.Bold,
+                fontSize = 30.sp,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 20.dp)
+            )
+        }
+        item{
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.foto_gunung),
+                    contentDescription = "Profile Picture",
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier
+                        .width(250.dp)
+                        .clip(RoundedCornerShape(12.dp))
+                )
+            }
+        }
+
+        item {
+            Text(
+                text = "Tentang Aku!",
+                fontWeight = FontWeight.SemiBold,
+                fontSize = 24.sp,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 8.dp),
+                textAlign = TextAlign.Center
+            )
+        }
+
+        item {
+            Text(
+                text = stringResource(id = R.string.overview),
+                fontSize = 16.sp,
+                lineHeight = 22.sp,
+                modifier = Modifier
+                    .padding(bottom = 16.dp),
+                textAlign = TextAlign.Justify
+            )
+        }
+
+        item {
+            Text(text = "Biodata",
+                fontWeight = FontWeight.SemiBold,
+                fontSize = 20.sp,
+                modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 8.dp))
+        }
+
+        item {
+            Row {
+                Text(
+                    text = infoArray.joinToString(separator = "\n"),
+                    fontSize = 16.sp,
+                    lineHeight = 24.sp,
+                    textAlign = TextAlign.Justify,
+                    modifier = Modifier.padding(vertical = 4.dp, )
+                )
+
+                Text(
+                    text = bioDataArray.joinToString(separator = "\n"),
+                    fontSize = 16.sp,
+                    lineHeight = 24.sp,
+                    textAlign = TextAlign.Justify,
+                    modifier = Modifier.padding(vertical = 4.dp)
+                )
+            }
+        }
+
+        items(itemList) { item ->
+            Card(
+                colors = CardDefaults.cardColors(containerColor = Color.LightGray),
+                modifier = Modifier
+                    .padding(vertical = 10.dp)
+                    .fillMaxWidth()
+            ) {
+                Column(modifier = Modifier.padding(10.dp)) {
+                    Text(
+                        text = item.name,
+                        fontSize = 16.sp,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Image(
+                        painter = painterResource(id = item.pictureId),
+                        contentDescription = null,
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .height(110.dp)
+                            .width(180.dp)
+                            .padding(vertical = 10.dp)
+                            .align(Alignment.CenterHorizontally)
+                            .clip(RoundedCornerShape(10.dp))
+                    )
+                    Text(
+                        text = stringResource(id = item.description),
+                        fontSize = 16.sp,
+                        textAlign = TextAlign.Justify
+                    )
+                }
+            }
+        }
+    }
+}
+
+
+@Preview
+@Composable
+fun DetailScreenPreview() {
+    DetailScreen()
+}

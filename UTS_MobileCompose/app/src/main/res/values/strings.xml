@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Biografi</string>
+
+    <string name="overview">
+        Halo! Perkenalkan Aku Randy Febrian, biasa dipanggil Randy, Aku lahir di Banjarmasin pada tanggal 2 Februari 2005
+        Aku adalah anak kedua dari 2 bersaudara. Aku mempunyai ketertarikan yang tinggi pada dunia Self Improvement. Aku sekarang kuliah Program Studi Teknologi Informasi Fakultas teknik
+        Universitas Lambung Mangkurat. Aku dulunya adalah lulusan SMAN 7 Banjarmasin.
+    </string>
+
+    <string name="osn">
+        Disini aku diberikan kesempatan buat ngelatih siswa-siswi SMAN 7 Banjarmasin untuk mempersiapkan mereka menghadapi Olimpiade Sains Nasional
+    </string>
+
+    <string name="hmti">
+        Selain itu, aku juga mengikuti organisasi mahasiswa bernama HMTI FT ULM yang memberikan aku banyak pengalaman yang menarik
+    </string>
+
+    <string name="asprak">
+        Kemudian, aku pernah juga menjadi asisten praktikum, ini adalah salah satu pengalamanku yang menarik
+    </string>
+
+</resources>
