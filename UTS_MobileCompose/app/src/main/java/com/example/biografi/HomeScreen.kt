@@ -30,7 +30,7 @@ fun HomeScreen(navController: NavController) {
         ) {
             Column {
                 Text(
-                    text = "Preview Mahasiswa",
+                    text = "Halaman Utama",
                     fontWeight = FontWeight.Bold,
                     fontSize = 30.sp,
                     textAlign = TextAlign.Center,
@@ -39,18 +39,8 @@ fun HomeScreen(navController: NavController) {
                         .padding(bottom = 20.dp)
                 )
 
-                Image(
-                    painter = painterResource(id = R.drawable.foto_gunung),
-                    contentDescription = "",
-                    contentScale = ContentScale.Fit,
-                    modifier = Modifier
-                        .width(250.dp)
-                        .align(Alignment.CenterHorizontally)
-                        .clip(RoundedCornerShape(12.dp))
-                )
-
                 Text(
-                    text = "Data Mahasiswa",
+                    text = "Informasi Mahasiswa",
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 30.sp,
                     textAlign = TextAlign.Center,
@@ -61,7 +51,7 @@ fun HomeScreen(navController: NavController) {
 
                 Row {
                     Text(
-                        text = infoArray.joinToString(separator = "\n"),
+                        text = infoArrayMain.joinToString(separator = "\n"),
                         fontSize = 16.sp,
                         lineHeight = 24.sp,
                         textAlign = TextAlign.Justify,
@@ -69,7 +59,7 @@ fun HomeScreen(navController: NavController) {
                     )
 
                     Text(
-                        text = bioDataArray.joinToString(separator = "\n"),
+                        text = bioDataArrayMain.joinToString(separator = "\n"),
                         fontSize = 16.sp,
                         lineHeight = 24.sp,
                         textAlign = TextAlign.Justify,

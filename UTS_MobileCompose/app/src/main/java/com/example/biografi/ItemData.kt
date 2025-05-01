@@ -36,3 +36,17 @@ val itemList = listOf<experience>(
     experience("Asisten Praktikum", R.drawable.asprak, R.string.asprak),
 )
 
+val bioDataArrayMain = arrayOf(
+    "Randy Febrian",
+    "2310817110013",
+    "Teknologi Informasi",
+    "4",
+    "Universitas Lambung Mangkurat")
+
+val infoArrayMain = arrayOf(
+    "Nama: ",
+    "NIM: ",
+    "Program Studi: ",
+    "Semester: ",
+    "Universitas: ",
+)
